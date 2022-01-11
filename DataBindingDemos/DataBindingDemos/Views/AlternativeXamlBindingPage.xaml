@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBindingDemos.Views.AlternativeXamlBindingPage"
+             Title="Alternative XAML Binding">
+    <StackLayout Padding="10, 0">
+        <Label Text="TEXT"
+               FontSize="40"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               Scale="{Binding Source={x:Reference slider2},
+                               Path=Value}" 
+               Rotation="{Binding Source={x:Reference slider1},
+                               Path=Value}"/>
+
+        <Slider x:Name="slider1"
+                Maximum="360"
+                VerticalOptions="CenterAndExpand" />
+        
+        <Stepper x:Name="slider2"
+                Minimum="1"
+                Maximum="5"
+                Value="1"
+                VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>
